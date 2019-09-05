@@ -1,9 +1,11 @@
 package tws.controller;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,7 @@ public class PackageController {
     @Autowired
     PackageService packageService;
     
+    //提交包裹信息
     @PostMapping
     public  ResponseEntity<Package> addPackage(@RequestBody  Package packages){
         packageService.addPackages(packages);
@@ -25,7 +28,11 @@ public class PackageController {
 				("/packages"+packages.getNumber())).build();
         
     }
-    
+    //获取信息
+    @GetMapping
+    public ResponseEntity<List<Package>> getAllPackages(){
+        return ResponseEntity.ok(packageService.getAllPackages());
+    }
     
     
 }

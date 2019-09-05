@@ -1,5 +1,7 @@
 package tws.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,9 @@ public class PackageService {
 	public void addPackages(Package packages) {
 		packageMapper.insertPackage(packages);
 		
+	}
+	public List<Package> getAllPackages() {
+		return packageMapper.selectPackages();
 	}
 
 }
