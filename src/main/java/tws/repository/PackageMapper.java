@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import tws.entity.Package;
 
@@ -11,6 +12,7 @@ import tws.entity.Package;
 public interface PackageMapper {
 
 	 void insertPackage(@Param("packages") Package packages) ;
-
+	 
+//	 @Select("select * from packages")
 	List<Package> selectPackages();
 }
