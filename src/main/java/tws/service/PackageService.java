@@ -19,5 +19,9 @@ public class PackageService {
 	public List<Package> getAllPackages() {
 		return packageMapper.selectPackages();
 	}
+	
+	public void updatePackage(Package packages) {
+		packageMapper.updatePackage(packages);
+	}
 
 }

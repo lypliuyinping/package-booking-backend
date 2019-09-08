@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +36,11 @@ public class PackageController {
     public ResponseEntity<List<Package>> getAllPackages(){
         return ResponseEntity.ok(packageService.getAllPackages());
     }
-    
+    //修改
+    @PutMapping
+    public ResponseEntity<Package> updatePackage(@RequestBody Package packages){
+        packageService.updatePackage(packages);
+        return ResponseEntity.ok(packages);
+    }
     
 }

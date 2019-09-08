@@ -5,11 +5,10 @@ public class Package {
 	private String user;
 	private String telephone;
 	private String weight;
-	private int state;
+	private String state;
 	private String dateTime;
 
-	public Package(String number, String user, String telephone, String weight, int state, String dateTime) {
-		super();
+	public Package(String number, String user, String telephone, String weight, String state, String dateTime) {
 		this.number = number;
 		this.user = user;
 		this.telephone = telephone;
@@ -53,11 +52,11 @@ public class Package {
 		this.weight = weight;
 	}
 
-	public int getState() {
+	public String getState() {
 		return state;
 	}
 
-	public void setState(int state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 

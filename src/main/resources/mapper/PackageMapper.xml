@@ -11,4 +11,9 @@
 	<select id="selectPackages" resultType="tws.entity.Package">
 		select * from packages
 	</select>
+	
+	  <update id="updatePackage">
+        update `packages` set `state` = #{packages.state} where `number` = #{packages.number}
+    </update>
+	
 </mapper>

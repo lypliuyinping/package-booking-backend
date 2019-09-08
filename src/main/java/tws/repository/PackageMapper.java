@@ -15,4 +15,6 @@ public interface PackageMapper {
 	 
 //	 @Select("select * from packages")
 	List<Package> selectPackages();
+
+	void updatePackage(@Param("packages") Package packages);
 }
